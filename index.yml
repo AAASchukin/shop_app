@@ -1,0 +1,453 @@
+{
+  "info": {
+    "_postman_id": "1207ae87-566d-411a-afdf-e88d3286b404",
+    "name": "schukin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "29021124"
+  },
+  "item": [
+    {
+      "name": "get items request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/item"
+      },
+      "response": [
+        {
+          "name": "get item example",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8080/api/v1/item"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:08:10 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Макароны\",\n        \"price\": 150\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Котлеты\",\n        \"price\": 104\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Помидоры\",\n        \"price\": 54\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "post item",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"name\": \"Кетчуп\",\r\n        \"price\": 204\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/item"
+      },
+      "response": [
+        {
+          "name": "post item example",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"name\": \"Кетчуп\",\r\n        \"price\": 204\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/item"
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:10:32 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 4,\n    \"name\": \"Кетчуп\",\n    \"price\": 204\n}"
+        }
+      ]
+    },
+    {
+      "name": "add item to the cart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/item/carts?userId=1&itemId=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "item",
+            "carts"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "1"
+            },
+            {
+              "key": "itemId",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "add item to the cart example",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/item/carts?userId=1&itemId=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "item",
+                "carts"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                },
+                {
+                  "key": "itemId",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:12:35 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Макароны\",\n        \"price\": 150\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Котлеты\",\n        \"price\": 104\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Кетчуп\",\n        \"price\": 204\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "get user's cart",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/item/user/2"
+      },
+      "response": [
+        {
+          "name": "get user's cart example",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8080/api/v1/item/user/2"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:14:30 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Помидоры\",\n        \"price\": 54\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "add new user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"login\": \"usr44\",\r\n    \"firstName\": \"Dane\",\r\n    \"lastName\": \"Doe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/user"
+      },
+      "response": [
+        {
+          "name": "add new user example",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\": \"usr44\",\r\n    \"firstName\": \"Dane\",\r\n    \"lastName\": \"Doe\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/user"
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:18:30 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 3,\n    \"login\": \"usr44\",\n    \"firstName\": \"Dane\",\n    \"lastName\": \"Doe\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "get user by login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/user/usr44"
+      },
+      "response": [
+        {
+          "name": "get user by login example",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8080/api/v1/user/usr44"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:19:19 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 3,\n    \"login\": \"usr44\",\n    \"firstName\": \"Dane\",\n    \"lastName\": \"Doe\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "get user by first and last name mask",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/user/firstAndLastName?firstName=d&lastName=d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "firstAndLastName"
+          ],
+          "query": [
+            {
+              "key": "firstName",
+              "value": "d"
+            },
+            {
+              "key": "lastName",
+              "value": "d"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "get user by first and last name mask",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user/firstAndLastName?firstName=d&lastName=d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user",
+                "firstAndLastName"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "d"
+                },
+                {
+                  "key": "lastName",
+                  "value": "d"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 Mar 2024 22:24:12 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 3,\n        \"login\": \"usr44\",\n        \"firstName\": \"Dane\",\n        \"lastName\": \"Doe\"\n    }\n]"
+        }
+      ]
+    }
+  ]
+}

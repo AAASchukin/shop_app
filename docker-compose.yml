@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 143286
+      POSTGRES_DB: shop
+
+
+  app:
+    image: 'shop-app:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: shop
+    ports:
+      - 8000:8080
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/shop
